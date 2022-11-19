@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "3d8ba17f-0412-4563-9141-ef1513b926c6",
+		"name": "Employee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6339831"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeName\": \"Chandra\",\r\n    \"department\": \"IT\",\r\n    \"salary\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10280/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10280",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify employee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeID\": 1,\r\n    \"employeeName\": \"Chandra\",\r\n    \"department\": \"IT\",\r\n    \"salary\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10280/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10280",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List employee by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeName\": \"Chandra\",\r\n    \"department\": \"IT\",\r\n    \"salary\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10280/api/employee/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10280",
+					"path": [
+						"api",
+						"employee",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all empllyees",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeName\": \"Chandra\",\r\n    \"department\": \"IT\",\r\n    \"salary\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10280/api/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10280",
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10280/api/employee/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10280",
+					"path": [
+						"api",
+						"employee",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

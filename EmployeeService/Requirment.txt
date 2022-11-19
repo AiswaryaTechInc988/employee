@@ -1,0 +1,18 @@
+At home exercise
+write a simple Employee management REST APIservice  in spring boot. 
+You should be able to call this API using postman with:
+    - Create Employee
+    - List employee by ID
+    - List all empllyees
+    - Delete employee
+    - Modify employee
+The fields for the employee record are up to you. 
+You should store the employee in an H2 database.
+You should use the latest version of spring boot and most out of the box features for this exercise
+You should have running unit tests
+You should provide postman scripts to test the API
+You should provide instructions on how to run your service
+Bonus:
+- have a docker file and dockerize your app so that it can be started with the docker file
+Please submit the exercise as a zip file. 
+The work must be your own. If you find the solution online, then please reference it.
