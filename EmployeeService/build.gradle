@@ -2,6 +2,9 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.5'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id "jacoco"
+	id "java-library"
+	id "org.sonarqube" version "2.7"
 }
 
 group = 'com.employee'
@@ -51,3 +54,39 @@ sourceSets {
 test {
 	useJUnitPlatform()
 }
+
+sonarqube {
+    properties {
+        property "sonar.exclusions", "**/domain/*.java"
+    }
+}
+
+jacoco {
+	toolVersion = "0.8.2"
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.79
+            }
+        }
+    }
+}
+
+jacocoTestReport {
+	reports {
+			html.required=true
+			csv.required=false
+			xml.required=false
+	}
+	afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ["com/payworks/PayworksServicesApplication.class", "com/payworks/aop/EnableDeletedFilter.class", "com/payworks/aop/DatabaseThrowsAdvice.class"])
+        }))
+    }
+}
+
+test.finalizedBy jacocoTestReport
+jacocoTestReport.finalizedBy bootJar
