@@ -11,8 +11,13 @@ Install JDK 11 and gradle in local
 5. navigate to build\libs
 6. run command "java -jar EmployeeService-0.0.1-RELEASE.jar"
 
+(or)
+
+1. run the cmd file shared in the email
 
 
+### Run tests
+import scripts to postman from the folder  "C:\Repository1\employee\EmployeeService\src\main\resources" and file name "Employee.postman_collection.json"
 
 
 ### Additional Links
