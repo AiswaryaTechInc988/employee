@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.employee.constants.ApplicationConstants;
@@ -22,12 +21,16 @@ import com.employee.validator.EmployeeValidator;
 public class EmployeeService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationConstants.LOGGER_NAME);
-
-	@Autowired
+	
 	public EmployeeRepository employeeRepository;
 
-	@Autowired
 	public EmployeeValidator employeeValidator;
+
+	public EmployeeService(EmployeeRepository employeeRepository, EmployeeValidator employeeValidator) {
+		this.employeeRepository = employeeRepository;
+		this.employeeValidator = employeeValidator;
+	}
+
 
 	public EmployeeVO createEmployee(EmployeeDTO dto) {
 		LOGGER.debug("Employee record creation is started");
@@ -74,7 +77,7 @@ public class EmployeeService {
 		try {
 			employee = employeeRepository.findById(id);
 		} catch (Exception e) {
-			throw new EmployeeServiceException("Unexpected error occured while fetching employees " + e.getMessage());
+			throw new EmployeeServiceException("Unexpected error occured while fetching employee " + e.getMessage());
 		}
 
 		if (employee.isPresent()) {

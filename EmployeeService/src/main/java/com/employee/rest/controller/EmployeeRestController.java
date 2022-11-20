@@ -2,7 +2,6 @@ package com.employee.rest.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,8 +21,11 @@ import com.employee.services.EmployeeService;
 @RequestMapping("api/employee")
 public class EmployeeRestController {
 
-	@Autowired
 	private EmployeeService service;
+	
+	public EmployeeRestController(EmployeeService service) {
+		this.service = service;
+	}
 
 	@GetMapping("{id}")
 	public ResponseEntity<EmployeeVO> getById(@PathVariable("id") Integer id) {
